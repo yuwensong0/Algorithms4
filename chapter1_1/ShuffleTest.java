@@ -1,7 +1,5 @@
 package chapter1_1;
 
-import java.util.Arrays;
-
 public class ShuffleTest {
 	public static void shuffle(int[] a){
 		int N = a.length;
