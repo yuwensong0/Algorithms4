@@ -18,6 +18,22 @@ public class Stack<E> implements Iterable<E>{
 		return N;
 	}
 	
+	public E peek(){
+		return first.e;
+	}
+	
+	public static <T> Stack<T> copy(Stack<T> stack){
+		Stack<T> a = new Stack<>();
+		Stack<T> b = new Stack<>();
+		for (T t : stack){
+			a.push(t);
+		}
+		for (T t: a){
+			b.push(t);
+		}
+		return b;
+	}
+	
 	public void push(E e){
 		Node oldFirst = first;
 		first = new Node();
@@ -65,6 +81,12 @@ public class Stack<E> implements Iterable<E>{
 		System.out.println(stack.pop());
 		System.out.println("size = " + stack.size());
 		System.out.println(stack.isEmpty());
+		System.out.println(stack.peek());
+		System.out.println(stack.peek());
+		for (int i : Stack.copy(stack)){
+			System.out.print(i + " ");
+		}
+		
 
 	}
 
