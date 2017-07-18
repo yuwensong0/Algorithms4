@@ -1,8 +1,9 @@
 package chapter1_2;
 
 import java.util.Arrays;
+import java.util.*;
 
-public class RandomQueue<E> {
+public class RandomQueue<E> implements Iterable<E> {
 	private E[] queue = (E[]) new Object[1];
 	private int N = 0;
 	
@@ -37,6 +38,24 @@ public class RandomQueue<E> {
 		int r = (int) (Math.random() * N);
 		return queue[r];
 	}
+	
+	public Iterator<E> iterator() {
+		return new RandomQueueIterator();
+	}
+	
+	private class RandomQueueIterator implements Iterator<E> {
+		private int i = N;
+		public boolean hasNext() {
+			return i != 0;
+		}
+		public E next() {
+			int r = (int) (Math.random() * i);
+			E e = queue[r];
+			queue[r] = queue[--i];
+			queue[i] = e;
+			return e;
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -55,6 +74,13 @@ public class RandomQueue<E> {
 			}
 		}
 		System.out.println(Arrays.deepToString(a));
+		RandomQueue<Integer> q = new RandomQueue<>();
+		for (int j = 1; j < 14; j++) {
+			q.enqueue(j);
+		}
+		for (int i : q) {
+			System.out.print(i + " ");
+		}
 
 	}
 
