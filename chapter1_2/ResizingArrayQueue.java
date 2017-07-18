@@ -41,10 +41,10 @@ public class ResizingArrayQueue<E> implements Iterable<E>{
 		queue[head] = null;
 		head++;
 		head %= queue.length;
+		N--;
 		if (N > 0 && N == queue.length / 4){
 			resize(N * 2);
 		}
-		N--;
 		return e;
 	}
 	
