@@ -10,6 +10,24 @@ public class Stack<E> implements Iterable<E>{
 		Node next;
 	}
 	
+	public Stack() {
+		
+	}
+	
+	public Stack(Stack<E> s) {
+		Stack<E> temp = new Stack<>();
+		E e = null;
+		while (!s.isEmpty()) {
+			temp.push(s.pop());
+		}
+		while (!temp.isEmpty()) {
+			e = temp.pop();
+			this.push(e);
+			s.push(e);
+		}
+		temp = null;
+	}
+	
 	public boolean isEmpty(){
 		return first == null;
 	}
@@ -86,6 +104,35 @@ public class Stack<E> implements Iterable<E>{
 		for (int i : Stack.copy(stack)){
 			System.out.print(i + " ");
 		}
+		System.out.println();
+		Stack<Integer> t = new Stack<>(stack);
+		for (int i : stack){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		for (int i : t){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		System.out.println(stack.pop());
+		for (int i : stack){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		for (int i : t){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		t.push(33);
+		for (int i : stack){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		for (int i : t){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		
 		
 
 	}
