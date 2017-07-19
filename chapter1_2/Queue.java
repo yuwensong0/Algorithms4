@@ -6,6 +6,18 @@ public class Queue<E> implements Iterable<E>{
 	private Node first = null;
 	private Node last = null;
 	private int N = 0;
+	
+	public Queue() {
+		
+	}
+	
+	public Queue(Queue<E> q) {
+		for (int i = 0; i < q.size(); i++) {
+			E e = q.dequeue();
+			q.enqueue(e);
+			this.enqueue(e);
+		}
+	}
 	private class Node{
 		E e;
 		Node next;
@@ -74,6 +86,33 @@ public class Queue<E> implements Iterable<E>{
 		System.out.println(queue.isEmpty());
 		System.out.println(queue.size());
 		System.out.println(queue.dequeue());
+		for (int i : queue){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		Queue<Integer> r = new Queue<>(queue);
+		for (int i : r){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		System.out.println(queue.dequeue());
+		for (int i : queue){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		for (int i : r){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		r.enqueue(11);
+		for (int i : queue){
+			System.out.print(i + " ");
+		}
+		System.out.println();
+		for (int i : r){
+			System.out.print(i + " ");
+		}
+		
 
 	}
 
