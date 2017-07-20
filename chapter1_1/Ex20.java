@@ -10,7 +10,7 @@ public class Ex20 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		System.out.println(logFactorial(0));
-		System.out.println(logFactorial(4));
+		System.out.println(logFactorial(4033));
 
 	}
 
