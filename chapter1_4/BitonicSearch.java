@@ -46,5 +46,4 @@ public class BitonicSearch {
 		System.out.println(i);
 
 	}
-
 }
