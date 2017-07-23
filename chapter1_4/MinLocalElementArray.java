@@ -27,6 +27,7 @@ public class MinLocalElementArray {
 		System.out.println("c : " + go(c));
 		System.out.println("d : " + go(d));
 
+		
 	}
 
 }
