@@ -41,7 +41,7 @@ public class SearchByFib {
 		int[] a = fib(14);
 		System.out.println(a[0] + " " + a[1]);
 		int[] b = {1,2,3,4,5,6,7,8,9,22};
-		int po = go(b, 1);
+		int po = go(b, 99);
 		System.out.println(po);
 	}
 }
