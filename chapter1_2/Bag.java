@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Bag<E> implements Iterable<E>{
 	private Node first;
+	int N = 0;
 	private class Node{
 		E e;
 		Node next;
@@ -14,6 +15,18 @@ public class Bag<E> implements Iterable<E>{
 		first = new Node();
 		first.e = e;
 		first.next = oldFirst;
+		N++;
+	}
+	
+	public boolean contains(E e) {
+		for (E t : this) {
+			if (t.equals(e)) return true;
+		}
+		return false;
+	}
+	
+	public int size() {
+		return N;
 	}
 	
 	public Iterator<E> iterator(){
@@ -40,7 +53,8 @@ public class Bag<E> implements Iterable<E>{
 		for (int i : bag){
 			System.out.print(i + " ");
 		}
-
+		System.out.println(bag.contains(5));
+		System.out.println(bag.contains(33));
 	}
 
 }
