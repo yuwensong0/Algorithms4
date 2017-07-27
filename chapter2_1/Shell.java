@@ -6,19 +6,19 @@ public class Shell {
 	public static void sort(Comparable[] a) {
 		int N = a.length;
 		int h = 1;
-		print(a);
+		//print(a);
 		while (h < N/3) h = 3*h + 1;
 		while (h >= 1) {
 			for (int i = h; i < N; i++) {
 				for (int j = i; j >= h && less(a[j], a[j-h]); j -=h) {
-					print(a, j, j-h);
+					//print(a, j, j-h);
 					exch(a, j, j-h);
 					//print(a, j, j-h);
 				}
 			}
 			h /=3;
 		}
-		print(a);
+		//print(a);
 	}
 	private static boolean less(Comparable v, Comparable w) {
 		return v.compareTo(w) < 0;

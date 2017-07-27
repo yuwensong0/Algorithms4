@@ -8,6 +8,7 @@ public class SortCompare {
 		if (alg.equals("Insertion")) Insertion.sort(a);
 		if (alg.equals("Selection")) Selection.sort(a);
 		if (alg.equals("Shell")) Shell.sort(a);
+		if (alg.equals("Ex24")) Ex24.sort(a);
 		return timer.elapsedTime();
 	}
 	
@@ -27,8 +28,8 @@ public class SortCompare {
 		// TODO Auto-generated method stub
 		int N = 1000;
 		int T = 1000;
-		double t1 = timeRandomInput("Shell", N, T);
-		double t2 = timeRandomInput("Selection", N ,T);
+		double t1 = timeRandomInput("Insertion", N, T);
+		double t2 = timeRandomInput("Ex24", N ,T);
 		System.out.println(t2/t1);
 
 	}

@@ -21,7 +21,7 @@ public class Ex24 {
 				//print(a, j, j-1);
 			}
 		}
-		print(a);
+		//print(a);
 	}
 	private static boolean less(Comparable v, Comparable w) {
 		return v.compareTo(w) < 0;
