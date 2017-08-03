@@ -15,8 +15,8 @@ public class Inversions {
 	private static int count(Comparable[] a, int lo, int hi, Comparable[] aux, int inversions) {
 		if (lo >= hi) return inversions;
 		int mid = lo + (hi - lo)/2;
-		inversions += count(a, lo, mid, aux, inversions);
-		inversions += count(a, mid+1, hi, aux, inversions);
+		inversions = count(a, lo, mid, aux, inversions);
+		inversions = count(a, mid+1, hi, aux, inversions);
 		return merge(a, lo, mid, hi, aux, inversions);
 	}
 	
@@ -29,7 +29,7 @@ public class Inversions {
 		for (int k = lo; k <= hi; k++) {
 			if (i > mid) a[k] = aux[j++];
 			else if (j > hi) a[k] = aux[i++];
-			else if (less(a[j], a[i])) {
+			else if (less(aux[j], aux[i])) {
 				inversions += j - k;
 				a[k] = aux[j++];
 			} else {
@@ -45,7 +45,9 @@ public class Inversions {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Double[] a = {1.2, 1.7, 0.0};
+		Integer[] a = {0, 3, 1, 6, 2, 5, 4};
+		Integer[] b = {1, 0, 3, 6, 4, 2, 5};
+		Integer[] c = {2, 0, 1, 3, 6, 4, 5};
 		System.out.println(count(a));
 
 	}
