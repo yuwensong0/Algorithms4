@@ -10,7 +10,7 @@ public class Quick3wayOptimize {
 	public static void sort(Comparable[] a) {
 		StdRandom.shuffle(a);
 		sort(a, 0, a.length - 1);
-		print(a);
+		//print(a);
 	}
 
 	private static void sort(Comparable[] a, int lo, int hi) {
@@ -59,7 +59,7 @@ public class Quick3wayOptimize {
 		for (int k = hi; k >= q; k--) {
 			exch(a, k, i++);
 		}
-		print(a);
+		//print(a);
 		sort(a, lo, j);
 		sort(a, i, hi);
 
