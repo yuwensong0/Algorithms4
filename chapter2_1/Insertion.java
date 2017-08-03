@@ -39,7 +39,6 @@ public class Insertion {
 		for (Comparable i : a) {
 			if (less(max, i)) max = i;
 		}
-		StdDraw.setYscale(0, (int)max);
 		StdDraw.setXscale(-1, a.length);
 		for (int i = 0; i < a.length; i++) {
 			if (i == n || i == m) StdDraw.setPenColor(StdDraw.RED);

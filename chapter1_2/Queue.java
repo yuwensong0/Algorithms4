@@ -31,6 +31,12 @@ public class Queue<E> implements Iterable<E>{
 		return N;
 	}
 	
+	public E peek() {
+		if (isEmpty()) return null;
+		E e = first.e;
+		return e;
+	}
+	
 	public void enqueue(E e){
 		Node oldLast = last;
 		last = new Node();
@@ -45,6 +51,7 @@ public class Queue<E> implements Iterable<E>{
 	}
 	
 	public E dequeue(){
+		if (isEmpty()) return null;
 		E e = first.e;
 		first = first.next;
 		if (isEmpty()){
